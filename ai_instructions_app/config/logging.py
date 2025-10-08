@@ -31,4 +31,6 @@ LOGGING_CONFIG = {
 def configure_logging(settings: Settings) -> None:
     """Configure logging for the application using the provided settings."""
     dictConfig(LOGGING_CONFIG)
-    logging.getLogger(__name__).debug("Logging configured with settings: %s", settings.dict())
+    logging.getLogger(__name__).debug(
+        "Logging configured with settings: %s", settings.model_dump()
+    )
